@@ -1,0 +1,41 @@
+[user]
+	name = Georgii Korshunov
+	email = georgii.korshunov@cdprojektred.com
+[core]
+	excludesfile = /Users/georgii.korshunov/.gitignore_global
+	editor = vim
+	autocrlf = input
+	pager = less -FX
+[push]
+	default = current
+	followTags = true
+[pull]
+	rebase = true
+
+[commit]
+	template = ~/.stCommitMsg
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[url "git@gitlab.gog.com:"]
+	insteadOf = https://gitlab.gog.com/
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[alias] 
+	st = status
+	ci = commit
+	co = checkout
+
+	lga = log --graph --oneline --all --decorate --pretty=format:'%C(bold)%h%Creset  %C(green dim)(%cr)%Creset %C(ul)<%an>%Creset -%C(auto)%d%Creset %s'
+	lg = log --graph --pretty=format:'%C(bold)%h%Creset %C(green dim)(%cr)%Creset %C(ul)<%an> -%C(auto)%d%Creset %s'
+	diff-release = log --merges --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(ul)<%an>%Creset' --abbrev-commit --date=relative master..develop
+	heckout = checkout
+	up = update

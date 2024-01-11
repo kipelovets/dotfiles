@@ -1,0 +1,10 @@
+#!/bin/bash
+
+branches=( $(git branch --format='%(refname:short)') )
+main_branches=( "master" "develop" "main" )
+for branch in ${main_branches[@]}; do
+    if [[ ${branches[@]} =~ "$branch" ]]; then
+        git co "$branch"
+        git pull
+    fi
+done

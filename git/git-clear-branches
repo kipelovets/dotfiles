@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -e
+
+function echo_err() {
+    echo `tput setaf 1` $1 `tput sgr0`
+}
+
+branches=( $(git branch --format='%(refname:short)') )
+main_branches=( "develop" "master" "main" )
+
+for branch in ${main_branches[@]}; do
+    if [[ ${branches[@]} =~ "$branch" ]]; then
+        upstream="$branch"
+        break
+    fi
+done
+if [[ "" == "$upstream" ]]; then
+    echo_err "Main branch not found, checked $main_branches"
+    exit 1
+fi
+
+
+git remote prune origin
+merged_branches=$(git branch --merged "$upstream" | grep -v 'develop\|master\|main' | tr '*' " ")
+if [[ "" == "$merged_branches" ]]; then
+    echo 'No unmerged branches to remove'
+    exit 0
+fi
+
+echo_err "Removing branches (merged into $upstream): "
+for i in $merged_branches; do
+    git log -1 --pretty=format:'%C(bold)%h%Creset  %C(green dim)(%cr)%Creset %C(ul)<%an>%Creset -%C(auto)%d%Creset %s' "$i"
+done
+echo_err "Continue (y/n)?"
+
+read -p ""
+if [ "$REPLY" == "y" ]; then
+    echo $merged_branches | xargs -n 1 git branch -D
+fi
