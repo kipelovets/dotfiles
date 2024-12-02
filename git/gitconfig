@@ -1,8 +1,9 @@
 [user]
 	name = Georgii Korshunov
-	email = georgii.korshunov@cdprojektred.com
+	email = georgii.korshunov@chess.com
+	signingkey = /Users/kipelovets/.ssh/id_rsa.pub
 [core]
-	excludesfile = /Users/georgii.korshunov/.gitignore_global
+	excludesfile = /Users/kipelovets/.gitignore_global
 	editor = vim
 	autocrlf = input
 	pager = less -FX
@@ -14,6 +15,7 @@
 
 [commit]
 	template = ~/.stCommitMsg
+	gpgsign = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -37,5 +39,14 @@
 	lga = log --graph --oneline --all --decorate --pretty=format:'%C(bold)%h%Creset  %C(green dim)(%cr)%Creset %C(ul)<%an>%Creset -%C(auto)%d%Creset %s'
 	lg = log --graph --pretty=format:'%C(bold)%h%Creset %C(green dim)(%cr)%Creset %C(ul)<%an> -%C(auto)%d%Creset %s'
 	diff-release = log --merges --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(ul)<%an>%Creset' --abbrev-commit --date=relative master..develop
+	bb = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
 	heckout = checkout
 	up = update
+	bd = branchdates -pr
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /Users/kipelovets/.git_allowed_signers
+[diff]
+	mnemonicPrefix = true
