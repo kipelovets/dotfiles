@@ -1,6 +1,6 @@
 [user]
 	name = Georgii Korshunov
-	email = georgii.korshunov@chess.com
+	email = georgii.korshunov@larian.com
 	signingkey = /Users/kipelovets/.ssh/id_rsa.pub
 [core]
 	excludesfile = /Users/kipelovets/.gitignore_global
