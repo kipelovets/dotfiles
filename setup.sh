@@ -94,3 +94,7 @@ add_folder_to_dock "$HOME/Desktop" -a 2 -d 1 -v 2
 add_folder_to_dock '/Applications' -a 1 -d 1 -v 2
 
 killall Dock
+
+# mouse settings
+cd -
+./setup/mouse.sh
