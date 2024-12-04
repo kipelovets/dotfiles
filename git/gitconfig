@@ -1,9 +1,9 @@
 [user]
 	name = Georgii Korshunov
 	email = georgii.korshunov@larian.com
-	signingkey = /Users/kipelovets/.ssh/id_rsa.pub
+	signingkey = /Users/georgiikorshunov/.ssh/id_rsa.pub
 [core]
-	excludesfile = /Users/kipelovets/.gitignore_global
+	excludesfile = /Users/georgiikorshunov/.gitignore_global
 	editor = vim
 	autocrlf = input
 	pager = less -FX
@@ -14,7 +14,6 @@
 	rebase = true
 
 [commit]
-	template = ~/.stCommitMsg
 	gpgsign = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -47,6 +46,6 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	allowedSignersFile = /Users/kipelovets/.git_allowed_signers
+	allowedSignersFile = /Users/georgiikorshunov/.git_allowed_signers
 [diff]
 	mnemonicPrefix = true
