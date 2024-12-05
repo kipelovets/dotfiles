@@ -79,7 +79,6 @@ corepack enable
 declare -a apps=(
     '/Applications/Safari.app'
     '/Applications/Slack.app'
-    '/System/Applications/Utilities/Terminal.app'
     '/System/Applications/System Settings.app'
     '/Applications/Neovide.app'
     '/Applications/Spotify.app'
