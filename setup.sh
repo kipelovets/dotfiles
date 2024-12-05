@@ -42,6 +42,8 @@ fi
 [[ ! -d "$HOME/.config" ]] && mkdir "$HOME/.config"
 [[ ! -L "$HOME/.config/nvim" ]] && ln -s "$HOME/Dev/vimrc/nvim" "$HOME/.config/nvim"
 
+[[ ! -f "$HOME/Library/Preferences/com.googlecode.iterm2.plist" ]] && cp "$HOME/Dev/dotfiles/iterm2/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
+
 # Dark mode
 osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 
