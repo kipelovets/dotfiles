@@ -67,7 +67,7 @@ osascript  << EOF
 EOF
 
 brew install neovim 
-brew install --cask neovide slack font-fira-code-nerd-font iterm2 
+brew install --cask neovide slack font-fira-code-nerd-font iterm2 docker
 brew install --cask spotify
 
 # for Focus.app dev
