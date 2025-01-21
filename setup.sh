@@ -51,13 +51,13 @@ osascript -e 'tell app "System Events" to tell appearance preferences to set dar
 osascript  << EOF
 	tell application "System Events"
 	    if not UI elements enabled then
-		set UI elements enabled to true
+            set UI elements enabled to true
 	    end if
 	end tell
 
 	tell application "System Events"
 	    tell application "System Preferences"
-		reveal anchor "keyboardTab" of pane "com.apple.preference.keyboard"
+            reveal anchor "keyboardTab" of pane "com.apple.preference.keyboard"
 	    end tell
 	    click checkbox 1 of tab group 1 of window 1 of application process "System Preferences"
 	end tell
@@ -66,9 +66,9 @@ osascript  << EOF
 	end if
 EOF
 
-brew install neovim 
-brew install --cask neovide slack font-fira-code-nerd-font iterm2 docker alfred
-brew install --cask spotify
+brew install neovim php rg terraform tmux
+brew install --cask neovide slack font-fira-code-nerd-font iterm2 docker alfred 
+brew install --cask spotify firefox
 
 # for Focus.app dev
 brew install node
@@ -100,3 +100,5 @@ killall Dock
 # mouse settings
 cd -
 ./setup/mouse.sh
+
+# keyboard is not automated, change the input source key & disable spotlight
