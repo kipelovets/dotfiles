@@ -1,9 +1,9 @@
 [user]
 	name = Georgii Korshunov
 	email = georgii.korshunov@larian.com
-	signingkey = /Users/georgiikorshunov/.ssh/id_rsa.pub
+	signingkey = ~/.ssh/id_rsa.pub
 [core]
-	excludesfile = /Users/georgiikorshunov/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 	autocrlf = input
 	pager = less -FX
@@ -46,6 +46,6 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	allowedSignersFile = /Users/georgiikorshunov/.git_allowed_signers
+	allowedSignersFile = ~/.git_allowed_signers
 [diff]
 	mnemonicPrefix = true
